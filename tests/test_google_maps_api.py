@@ -1,6 +1,3 @@
-# from requests import Response
-import json
-
 import allure
 from utils.api import Google_maps_api
 from utils.cheking import Cheking
@@ -19,7 +16,7 @@ class Test_create_place:
         Cheking.check_status_code(result_post, 200)
         Cheking.check_json_token(result_post, ['status', 'place_id', 'scope', 'reference', 'id'])
         Cheking.check_json_value(result_post, 'status', 'OK')
-        # token = json.loads(result_post.text)
+        # token = json.loads(result_post.text) # Получаем список полей
         # print(list(token))
 
         print("Метод GET_POST")
