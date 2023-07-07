@@ -15,13 +15,13 @@ class Logger:
 
     @classmethod
     def add_requst(cls, url: str, method: str):
-        test_name = os.environ.get('PYTEST_CURREN_TEST')
+        test_name = os.environ.get('PYTEST_CURRENT_TEST')
 
         data_to_add = f'\n-----\n'
-        data_to_add += f"Test: {test_name} \n"
-        data_to_add += f"Time: {str(datetime.datetime.now())} \n"
-        data_to_add += f"Request method: {method} \n"
-        data_to_add += f"Request URL: {url} \n"
+        data_to_add += f"Test: {test_name}\n"
+        data_to_add += f"Time: {str(datetime.datetime.now())}\n"
+        data_to_add += f"Request method: {method}\n"
+        data_to_add += f"Request URL: {url}\n"
         data_to_add += "\n"
 
         cls.write_log_to_file(data_to_add)
